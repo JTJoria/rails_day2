@@ -2,13 +2,15 @@
 
 <% @employees.each do |employee| %>
 
-<h2><%= employee.first_name %></h2>
+<h2><a href="/employees/<%= employee.id %>"><%= employee.first_name %></a></h2>
+<!-- <h2><%= employee.first_name %></h2> -->
 <h2><%= employee.last_name %></h2>
 <h2><%= employee.email %></h2>
 <h2><%= employee.job_title %></h2>
 <h2><%= employee.salary %></h2>
-<h2><%= employee.phone_number %></h2>
+<h2><%= employee.prefix %></h2>
 <h2><%= employee.gender %></h2>
+<h4><a data-confirm="Are You Sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a></h4>
 
 <hr>
 

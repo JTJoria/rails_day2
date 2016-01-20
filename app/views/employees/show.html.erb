@@ -1,7 +1,16 @@
+<h1>File on <%= @employee.full_name %></h1>
+
+
 <h2><%= @employee.first_name %></h2>
 <h2><%= @employee.last_name %></h2>
 <h2><%= @employee.email %></h2>
 <h2><%= @employee.job_title %></h2>
 <h2><%= @employee.salary %></h2>
-<h2><%= @employee.phone_number %></h2>
+<h2><%= @employee.prefix %></h2>
 <h2><%= @employee.gender %></h2>
+
+<h3>Updated on: <%= @employee.friendly_updated_at %></h3>
+
+<%= link_to "Home", "/employees" %>
+  <%= link_to "Edit", "/employees/#{@employee.id}/edit" %>
+  <%= link_to "Delete", "/employees/#{@employee.id}", method: :delete, data:{confirm: "Are You Sure?"} %>

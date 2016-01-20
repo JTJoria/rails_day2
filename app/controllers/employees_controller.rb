@@ -15,4 +15,19 @@ class EmployeesController < ApplicationController
     @employee = Employee.create({first_name: params[:first_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender]})
   end
 
+  def edit
+    @employee = Employee.find_by(id: params[:id])
+  end
+
+  def update
+    @employee = Employee.find_by(id: params[:id])
+
+    @employee.update({first_name: params[:first_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender]})
+  end
+
+  def destroy
+    @employee = Employee.find_by(id: params[:id])
+    @product.destroy
+  end
+
 end
