@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :users
+  root "employees#index"
   get '/employees' => 'employees#index'
 
   get 'employees/new' => 'employees#new'

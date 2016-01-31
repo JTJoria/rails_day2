@@ -3,13 +3,20 @@
 
 <h2>First Name: <%= @employee.first_name %></h2>
 <h2>Last Name: <%= @employee.last_name %></h2>
+<h2>Address: <%= @employee.address %></h2>
 <h2>Email: <%= @employee.email %></h2>
 <h2>Title: <%= @employee.job_title %></h2>
 <h2>Salary: <%= @employee.salary %></h2>
 <h2>Contact Number: <%= @employee.prefix %></h2>
 <h2>Gender: <%= @employee.gender %></h2>
-
+<h3>File Created By: <%= @employee.user.email %></h3>
 <h3>Updated on: <%= @employee.friendly_updated_at %></h3>
+
+<h3>Groups: </h3>
+<h3><% @employee.categories.each do |category| %>
+  <%= category.name %>
+<% end %> </h3>
+
 
 <%= link_to "Home", "/employees" %>
   <%= link_to "Edit", "/employees/#{@employee.id}/edit" %>

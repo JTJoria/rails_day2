@@ -13,6 +13,11 @@
 </div>
 
 <div>
+  <%= label_tag :address %>
+  <%= text_field_tag :address, @employee.address %>
+</div>
+
+<div>
   <%= label_tag :email %>
   <%= text_field_tag :email, @employee.email %>
 </div>
@@ -37,6 +42,6 @@
   <%= text_field_tag :gender, @employee.gender %>
 </div>
 
-<%= submit_tag "Update The Team" %>
+<%= submit_tag "Get This Party Started" %>
 
 <% end %>
